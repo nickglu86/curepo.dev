@@ -5,7 +5,7 @@
 @theme {
   /* ---- Color: Material 3 (light) ---- */
   --color-primary: #6b38d4;
-  --color-primary-container: #8455ef;
+  --color-primary-c: #8455ef;
   --color-on-primary: #ffffff;
   --color-on-primary-container: #fffbff;
   --color-secondary: #006c49;

@@ -2,10 +2,6 @@
 import {
   Row,
   Chip,
-  PillsRow,
-  PillLabel,
-  Pill,
-  PillClose,
 } from "./FilterBar.styles";
 
 export default function FilterBar({
