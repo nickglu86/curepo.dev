@@ -49,7 +49,7 @@ export const Meta = tw.div`
   font-label-xs text-label-xs text-on-surface-variant
 `;
 
-export const Stat = tw.div`flex items-center gap-1`;
+export const Stat = tw.div`flex items-center gap-1 text-label-xxs`;
 
 export const StarIcon = tw.span`
   material-symbols-outlined text-[16px] text-tertiary-fixed-dim

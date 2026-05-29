@@ -23,6 +23,7 @@ export type CuratedRepo = {
 export type Repo = CuratedRepo & {
   owner: string;
   name: string;
+  slug: string;
   url: string;
   avatarUrl: string;
   languageColor: string;

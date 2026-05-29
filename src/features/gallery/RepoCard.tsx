@@ -23,7 +23,7 @@ const MAX_TAGS = 4;
 export default function RepoCard({ repo }: { repo: Repo }) {
   const visibleTags = repo.tags.slice(0, MAX_TAGS);
   return (
-    <Link href={`/repo/${repo.id}`} className="flex flex-col">
+    <Link href={`/repo/${repo.slug}`} className="flex flex-col">
       <Card $featured={repo.featured}>
         {repo.featured && <Glow />}
         <Head>

@@ -12,6 +12,10 @@ export function getRepoById(id: string): Repo | undefined {
   return repos.find((r) => r.id === id);
 }
 
+export function getRepoBySlug(slug: string): Repo | undefined {
+  return repos.find((r) => r.slug === slug);
+}
+
 export function getAllTags(): string[] {
   return [...new Set(repos.flatMap((r) => r.tags))].sort();
 }

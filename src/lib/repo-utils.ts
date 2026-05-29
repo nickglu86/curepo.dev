@@ -53,12 +53,20 @@ export function formatStars(stars: number): string {
   return String(stars);
 }
 
+export function slugify(s: string): string {
+  return s
+    .toLowerCase()
+    .replace(/[^a-z0-9-]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 export function toRepo(c: CuratedRepo): Repo {
   const [owner, name] = c.id.split("/");
   return {
     ...c,
     owner,
     name,
+    slug: slugify(name),
     url: `https://github.com/${c.id}`,
     avatarUrl: `https://github.com/${owner}.png`,
     languageColor: languageColor(c.language),

@@ -37,6 +37,7 @@ ROOT = Path(__file__).resolve().parent.parent
 API_VERSION = "2022-11-28"
 FIELD_ORDER = [
     "id",
+    "name",
     "description",
     "tags",
     "category",
@@ -138,10 +139,12 @@ def build_entry(repo_id: str, data: dict, existing: dict[str, dict]) -> dict:
         "createdAt": data.get("created_at") or "",
         "pushedAt": data.get("pushed_at") or "",
     }
+    name = repo_id.split("/", 1)[1]
     if repo_id in existing:
         # Preserve the curated layer; only refresh volatile stats.
         entry = dict(existing[repo_id])
         entry["id"] = repo_id
+        entry["name"] = name
         entry.update(stats)
         entry.setdefault("description", data.get("description") or "")
         entry.setdefault("tags", data.get("topics") or [])
@@ -151,6 +154,7 @@ def build_entry(repo_id: str, data: dict, existing: dict[str, dict]) -> dict:
     return order_entry(
         {
             "id": repo_id,
+            "name": name,
             "description": data.get("description") or "",
             "tags": data.get("topics") or [],
             "category": "",

@@ -85,6 +85,11 @@
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
+@utility text-display-lgs {
+  font-size: 2.2rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
 @utility text-headline-md {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -107,8 +112,24 @@
   line-height: 1rem;
 }
 
+@utility text-label-xxs {
+  font-size: 0.9rem;
+  line-height: 1rem;
+}
+
 body {
   font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   background: var(--color-background);
   color: var(--color-on-background);
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+.material-symbols-outlined[data-weight="fill"] {
+  font-variation-settings: "FILL" 1;
 }

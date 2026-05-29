@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://curepo.dev"),
   title: {
     default: "curepo.dev — Curated GitHub Repositories Worth Your Stars",
-    template: "%s · curepo",
+    template: "%s · curepo.dev",
   },
   description:
     "Discover hand-picked, interesting GitHub repositories. Search and filter curated open-source projects by topic, language, and activity — a better way to find your next favorite repo.",
@@ -46,12 +46,21 @@ export const metadata: Metadata = {
     title: "curepo — Curated GitHub Repositories Worth Your Stars",
     description:
       "Hand-picked, interesting GitHub repositories. Search and filter curated open-source projects by topic, language, and activity.",
+    images: [
+      {
+        url: "/assets/repo.png",
+        width: 128,
+        height: 128,
+        alt: "curepo.dev — Curated GitHub Repositories",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "curepo — Curated GitHub Repositories",
     description:
       "Hand-picked, interesting GitHub repositories — a better way to discover open source.",
+    images: ["/assets/repo.png"],
   },
 };
 
