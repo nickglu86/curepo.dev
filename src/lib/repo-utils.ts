@@ -66,7 +66,7 @@ export function toRepo(c: CuratedRepo): Repo {
     ...c,
     owner,
     name,
-    slug: slugify(name),
+    slug: `${slugify(owner)}/${slugify(name)}`,
     url: `https://github.com/${c.id}`,
     avatarUrl: `https://github.com/${owner}.png`,
     languageColor: languageColor(c.language),
