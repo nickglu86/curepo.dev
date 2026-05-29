@@ -5,6 +5,7 @@ import StyledComponentsRegistry from "@/lib/registry";
 import TopNav from "@/components/layout/TopNav";
 import Footer from "@/components/layout/Footer";
 import Analytics from "@/components/Analytics";
+import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -83,6 +84,7 @@ export default function RootLayout({
           <Footer />
         </StyledComponentsRegistry>
         <Analytics />
+        <VercelAnalytics />
       </body>
     </html>
   );
