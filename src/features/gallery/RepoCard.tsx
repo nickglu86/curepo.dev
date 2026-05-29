@@ -5,7 +5,7 @@ import {
   Card,
   Glow,
   Head,
-  Avatar,
+  AvatarImg,
   RepoName,
   ArchivedBadge,
   Desc,
@@ -27,7 +27,7 @@ export default function RepoCard({ repo }: { repo: Repo }) {
       <Card $featured={repo.featured}>
         {repo.featured && <Glow />}
         <Head>
-          <Avatar>{repo.owner.charAt(0).toUpperCase()}</Avatar>
+          <AvatarImg src={repo.avatarUrl} alt={`${repo.owner} avatar`} />
           <RepoName>{repo.id}</RepoName>
           {repo.archived && <ArchivedBadge>Archived</ArchivedBadge>}
         </Head>

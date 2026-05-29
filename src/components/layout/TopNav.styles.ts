@@ -30,6 +30,6 @@ export const NavLink = tw(Link)<{ $active?: boolean }>`
   font-body-md text-body-md transition-colors
   ${(p) =>
     p.$active
-      ? "text-primary font-bold border-b-2 border-primary pb-1"
+      ? "text-primary font-bold border-b-2 border-primary"
       : "text-on-surface-variant hover:text-primary"}
 `;

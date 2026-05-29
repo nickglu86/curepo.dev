@@ -28,5 +28,5 @@ export const ShowMoreWrap = tw.div`flex justify-center mt-stack-lg`;
 export const ShowMore = tw.button`
   px-6 py-2.5 rounded-full cursor-pointer
   font-body-md text-body-md font-semibold
-  bg-primary text-on-primary hover:opacity-90 transition-opacity
+  bg-primary-container text-on-primary hover:opacity-90 transition-opacity
 `;

@@ -30,17 +30,6 @@ export default function FilterBar({
           </Chip>
         ))}
       </Row>
-      {activeTags.size > 0 && (
-        <PillsRow>
-          <PillLabel>Active filters:</PillLabel>
-          {[...activeTags].map((tag) => (
-            <Pill key={tag}>
-              {tag}
-              <PillClose onClick={() => onToggle(tag)}>close</PillClose>
-            </Pill>
-          ))}
-        </PillsRow>
-      )}
     </>
   );
 }

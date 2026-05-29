@@ -22,6 +22,8 @@ export const Avatar = tw.div`
   flex items-center justify-center font-code-sm text-code-sm text-on-surface
 `;
 
+export const AvatarImg = tw.img`w-8 h-8 rounded-full object-cover`;
+
 export const RepoName = tw.h3`
   font-code-sm text-code-sm text-on-surface font-semibold
 `;
