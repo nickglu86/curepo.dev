@@ -72,5 +72,6 @@ export function toRepo(c: CuratedRepo): Repo {
     languageColor: languageColor(c.language),
     freshness: getFreshness(c.pushedAt),
     lastActivity: formatRelative(c.pushedAt),
+    displayDescription: c.customDescription || c.description,
   };
 }

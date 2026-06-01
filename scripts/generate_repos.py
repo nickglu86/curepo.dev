@@ -39,6 +39,7 @@ FIELD_ORDER = [
     "id",
     "name",
     "description",
+    "customDescription",
     "tags",
     "category",
     "featured",
@@ -147,6 +148,7 @@ def build_entry(repo_id: str, data: dict, existing: dict[str, dict]) -> dict:
         entry["name"] = name
         entry.update(stats)
         entry.setdefault("description", data.get("description") or "")
+        entry.setdefault("customDescription", "")
         entry.setdefault("tags", data.get("topics") or [])
         entry.setdefault("category", "")
         entry.setdefault("featured", False)
@@ -156,6 +158,7 @@ def build_entry(repo_id: str, data: dict, existing: dict[str, dict]) -> dict:
             "id": repo_id,
             "name": name,
             "description": data.get("description") or "",
+            "customDescription": "",
             "tags": data.get("topics") or [],
             "category": "",
             "featured": False,

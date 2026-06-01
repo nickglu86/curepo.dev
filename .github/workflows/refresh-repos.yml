@@ -1,0 +1,44 @@
+name: Refresh repos.json
+
+# Runs daily at 06:00 UTC to refresh stars / lastActivity / etc.
+# in src/data/repos.json for the non-featured cards.
+# (Featured cards already refresh live every page request via GraphQL.)
+#
+# Also runnable on demand from Actions tab → "Refresh repos.json" → "Run workflow".
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Regenerate repos.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/generate_repos.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- src/data/repos.json; then
+            echo "No changes to repos.json — skipping commit."
+            exit 0
+          fi
+          git add src/data/repos.json
+          git commit -m "chore: refresh repos.json [skip ci]"
+          git push

@@ -15,14 +15,14 @@ import {
   ShowMore,
 } from "./Gallery.styles";
 
-type SortKey = "stars" | "active" | "newest";
+type SortKey = "featured" | "stars" | "active" | "newest";
 
 const PAGE_SIZE = 9;
 
 export default function Gallery({ repos }: { repos: Repo[] }) {
   const [query, setQuery] = useState("");
   const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
-  const [sort, setSort] = useState<SortKey>("stars");
+  const [sort, setSort] = useState<SortKey>("featured");
   const [visible, setVisible] = useState(PAGE_SIZE);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -67,7 +67,17 @@ export default function Gallery({ repos }: { repos: Repo[] }) {
 
     const ts = (d?: string) => (d ? new Date(d).getTime() : 0);
     const sorted = [...list];
-    if (sort === "stars") {
+    if (sort === "featured") {
+      const order = new Map(repos.map((r, i) => [r.id, i]));
+      sorted.sort((a, b) => {
+        if (a.featured && !b.featured) return -1;
+        if (!a.featured && b.featured) return 1;
+        if (a.featured && b.featured) {
+          return (order.get(a.id) ?? 0) - (order.get(b.id) ?? 0);
+        }
+        return b.stars - a.stars;
+      });
+    } else if (sort === "stars") {
       sorted.sort((a, b) => b.stars - a.stars);
     } else if (sort === "active") {
       sorted.sort((a, b) => ts(b.pushedAt) - ts(a.pushedAt));
@@ -98,6 +108,7 @@ export default function Gallery({ repos }: { repos: Repo[] }) {
               setSort(e.target.value as SortKey)
             }
           >
+            <option value="featured">Featured</option>
             <option value="stars">Sort by: Stars</option>
             <option value="active">Recently active</option>
             <option value="newest">Newest</option>

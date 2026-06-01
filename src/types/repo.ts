@@ -4,6 +4,7 @@ export type Freshness = "active" | "slowing" | "stale";
 export type CuratedRepo = {
   id: string; // "owner/name"
   description: string;
+  customDescription?: string;
   tags: string[];
   category: string;
   featured?: boolean;
@@ -29,4 +30,13 @@ export type Repo = CuratedRepo & {
   languageColor: string;
   freshness: Freshness;
   lastActivity: string;
+  displayDescription: string;
+};
+
+/** Live values fetched from the GitHub GraphQL API at request time. */
+export type LiveStats = {
+  stars: number;
+  forks: number;
+  openIssues: number;
+  pushedAt: string;
 };

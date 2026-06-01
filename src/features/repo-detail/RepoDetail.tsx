@@ -99,7 +99,7 @@ export default function RepoDetail({ repo }: { repo: Repo }) {
         </Actions>
       </Header>
 
-      <Description>{repo.description}</Description>
+      <Description>{repo.displayDescription}</Description>
 
       {repo.tags.length > 0 && (
         <Tags>

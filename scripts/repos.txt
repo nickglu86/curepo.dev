@@ -1,8 +1,21 @@
 # curepo — repositories to feature on the site.
 # One repo per line. Use "owner/name" or a full GitHub URL.
 # Lines starting with # are ignored. This file controls which repos appear.
+# Order here = order written to src/data/repos.json.
+# The first entries marked "featured": true in repos.json (currently 8) appear
+# at the top of the gallery with live GitHub stats.
 
+# --- Featured (top of gallery, live stats) ---
+https://github.com/openclaw/openclaw
+https://github.com/anthropics/skills
+https://github.com/multica-ai/andrej-karpathy-skills
 https://github.com/affaan-m/everything-claude-code
+https://github.com/mattpocock/skills
+https://github.com/karpathy/autoresearch
+https://github.com/garrytan/gstack
+https://github.com/anthropics/financial-services
+
+# --- Rest ---
 https://github.com/Donchitos/Claude-Code-Game-Studios
 https://github.com/TauricResearch/TradingAgents
 https://github.com/davmlaw/they_live_adblocker
@@ -18,12 +31,9 @@ https://github.com/michalsnik/aos
 https://github.com/instantdb/instant
 https://github.com/HKUDS/CLI-Anything
 https://github.com/ruvnet/ruflo
-https://github.com/garrytan/gstack
 https://github.com/DedSecInside/TorBot
 https://github.com/colbymchenry/codegraph
-https://github.com/anthropics/financial-services
 https://github.com/CloakHQ/CloakBrowser
-https://github.com/mattpocock/skills
 https://github.com/warpdotdev/warp
 https://github.com/rohitg00/agentmemory
 https://github.com/Lum1104/Understand-Anything
@@ -32,10 +42,7 @@ https://github.com/HKUDS/ViMax
 https://github.com/soxoj/maigret
 https://github.com/decolua/9router
 https://github.com/rohitg00/ai-engineering-from-scratch
-https://github.com/multica-ai/andrej-karpathy-skills
-https://github.com/ruvnet/ruflo
 https://github.com/yikart/AiToEarn
-https://github.com/mattpocock/sandcastle
 https://github.com/mattpocock/sandcastle
 https://github.com/LearningCircuit/local-deep-research
 https://github.com/datawhalechina/easy-vibe
@@ -47,20 +54,17 @@ https://github.com/playcanvas/engine
 https://github.com/oracle/skills
 https://github.com/fspecii/ace-step-ui
 https://github.com/Axorax/awesome-free-apps
-https://github.com/openclaw/openclaw
 https://github.com/obra/superpowers
 https://github.com/NousResearch/hermes-agent
-https://github.com/anthropics/skills
-https://github.com/multica-ai/andrej-karpathy-skills
 https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
-https://github.com/mattpocock/skills
-https://github.com/garrytan/gstack
 https://github.com/gsd-build/get-shit-done
 https://github.com/666ghj/MiroFish
 https://github.com/ruvnet/RuView
 https://github.com/earendil-works/pi
 https://github.com/code-yeongyu/oh-my-openagent
 https://github.com/anthropics/claude-code
-https://github.com/karpathy/autoresearch
-https://github.com/shanraisshan/claude-code-best-practice
-https://github.com/VoltAgent/awesome-design-md
+
+# --- Listed before but missing from repos.json (likely 404 / rate-limited on a
+#     previous run). Uncomment to retry; the script will skip them if still bad.
+# https://github.com/shanraisshan/claude-code-best-practice
+# https://github.com/VoltAgent/awesome-design-md

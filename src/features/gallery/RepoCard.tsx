@@ -31,7 +31,7 @@ export default function RepoCard({ repo }: { repo: Repo }) {
           <RepoName>{repo.id}</RepoName>
           {repo.archived && <ArchivedBadge>Archived</ArchivedBadge>}
         </Head>
-        <Desc>{repo.description}</Desc>
+        <Desc>{repo.displayDescription}</Desc>
         <Tags>
           {visibleTags.map((t) => (
             <Tag key={t}>{t}</Tag>
