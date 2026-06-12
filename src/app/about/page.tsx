@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <section className="max-w-2xl mx-auto px-margin-desktop py-stack-lg">
-      <h1 className="font-display-lg text-display-lg font-extrabold text-on-surface mb-stack-md">
+    <section className="max-w-2xl mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+      <h1 className="font-display-lg text-display-lgs md:text-display-lg font-extrabold text-on-surface mb-stack-md">
         About curepo
       </h1>
       <p className="font-body-lg text-body-lg text-on-surface-variant mb-stack-md">

@@ -10,9 +10,11 @@ export default function Hero({
   return (
     <Section>
       <Title>
-        Discover the best open source projects
+        The best GitHub repos for AI developers
       </Title>
-      <Subtitle>Hand-picked repositories for modern developers</Subtitle>
+      <Subtitle>
+        Hand-picked LLM tools, agent frameworks, and AI libraries — curated for 2026
+      </Subtitle>
       <StatPill>
         <StatIcon>check_circle</StatIcon>
         {repoCount} hand-picked repos · {topicCount} topics

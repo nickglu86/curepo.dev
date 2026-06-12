@@ -1,7 +1,7 @@
 import type { Repo } from "@/types/repo";
 import { getRepos } from "./repos";
 import { getLiveStatsForRepos } from "./live-stats";
-import { formatRelative, getFreshness } from "@/lib/repo-utils";
+import { activityLabel, getFreshness } from "@/lib/repo-utils";
 
 const MAX_FEATURED = 9;
 
@@ -18,14 +18,15 @@ export async function getReposWithLiveFeatured(): Promise<Repo[]> {
   return all.map((repo) => {
     const stats = live.get(repo.id);
     if (!stats) return repo;
+    const freshness = getFreshness(stats.pushedAt);
     return {
       ...repo,
       stars: stats.stars,
       forks: stats.forks,
       openIssues: stats.openIssues,
       pushedAt: stats.pushedAt,
-      lastActivity: formatRelative(stats.pushedAt),
-      freshness: getFreshness(stats.pushedAt),
+      freshness,
+      lastActivity: activityLabel(stats.pushedAt),
     };
   });
 }

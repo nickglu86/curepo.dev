@@ -15,7 +15,7 @@ import {
   ShowMore,
 } from "./Gallery.styles";
 
-type SortKey = "featured" | "stars" | "active" | "newest";
+type SortKey = "featured" | "stars" | "newest";
 
 const PAGE_SIZE = 9;
 
@@ -79,8 +79,6 @@ export default function Gallery({ repos }: { repos: Repo[] }) {
       });
     } else if (sort === "stars") {
       sorted.sort((a, b) => b.stars - a.stars);
-    } else if (sort === "active") {
-      sorted.sort((a, b) => ts(b.pushedAt) - ts(a.pushedAt));
     } else if (sort === "newest") {
       sorted.sort((a, b) => ts(b.createdAt) - ts(a.createdAt));
     }
@@ -110,7 +108,6 @@ export default function Gallery({ repos }: { repos: Repo[] }) {
           >
             <option value="featured">Featured</option>
             <option value="stars">Sort by: Stars</option>
-            <option value="active">Recently active</option>
             <option value="newest">Newest</option>
           </SortSelect>
         </GridHeader>

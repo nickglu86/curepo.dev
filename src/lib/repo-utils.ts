@@ -34,18 +34,13 @@ export function getFreshness(pushedAt: string): Freshness {
   return "stale";
 }
 
-export function formatRelative(pushedAt: string): string {
-  const ms = Date.now() - new Date(pushedAt).getTime();
-  const mins = Math.floor(ms / 60000);
-  if (mins < 1) return "active just now";
-  if (mins < 60) return `active ${mins}m ago`;
-  const hours = Math.floor(mins / 60);
-  if (hours < 24) return `active ${hours}h ago`;
-  const days = Math.floor(hours / 24);
-  if (days < 30) return `active ${days}d ago`;
-  const months = Math.floor(days / 30);
-  if (months < 12) return `${months}mo ago`;
-  return `${Math.floor(months / 12)}y ago`;
+// Coarse "how recently" buckets — tweak the day thresholds / wording to taste.
+export function activityLabel(pushedAt: string): string {
+  const days = (Date.now() - new Date(pushedAt).getTime()) / DAY;
+  if (days <= 30) return "Updated recently";
+  if (days <= 180) return "Updated in the last 6 months";
+  if (days <= 365) return "Updated this year";
+  return "Updated over a year ago";
 }
 
 export function formatStars(stars: number): string {
@@ -62,6 +57,7 @@ export function slugify(s: string): string {
 
 export function toRepo(c: CuratedRepo): Repo {
   const [owner, name] = c.id.split("/");
+  const freshness = getFreshness(c.pushedAt);
   return {
     ...c,
     owner,
@@ -70,8 +66,8 @@ export function toRepo(c: CuratedRepo): Repo {
     url: `https://github.com/${c.id}`,
     avatarUrl: `https://github.com/${owner}.png`,
     languageColor: languageColor(c.language),
-    freshness: getFreshness(c.pushedAt),
-    lastActivity: formatRelative(c.pushedAt),
+    freshness,
+    lastActivity: activityLabel(c.pushedAt),
     displayDescription: c.customDescription || c.description,
   };
 }

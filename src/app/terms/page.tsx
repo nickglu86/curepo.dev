@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <section className="max-w-3xl mx-auto px-margin-desktop py-stack-lg">
-      <h1 className="font-display-lg text-display-lg font-extrabold text-on-surface mb-stack-sm">
+    <section className="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+      <h1 className="font-display-lg text-display-lgs md:text-display-lg font-extrabold text-on-surface mb-stack-sm">
         Terms of Use for curepo.dev
       </h1>
 

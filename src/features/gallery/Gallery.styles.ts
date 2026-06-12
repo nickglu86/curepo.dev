@@ -2,11 +2,11 @@
 import tw from "tailwind-styled-components";
 
 export const SearchSection = tw.section`
-  max-w-3xl mx-auto px-margin-desktop mb-stack-lg
+  max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop mb-stack-lg
 `;
 
 export const GridSection = tw.section`
-  max-w-7xl mx-auto px-margin-desktop mb-stack-lg
+  max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop mb-stack-lg
 `;
 
 export const Heading = tw.h2`

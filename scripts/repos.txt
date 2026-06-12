@@ -6,6 +6,10 @@
 # at the top of the gallery with live GitHub stats.
 
 # --- Featured (top of gallery, live stats) ---
+https://github.com/safishamsi/graphify
+https://github.com/Lum1104/Understand-Anything
+https://github.com/chopratejas/headroom
+https://github.com/MadsLorentzen/ai-job-search
 https://github.com/openclaw/openclaw
 https://github.com/anthropics/skills
 https://github.com/multica-ai/andrej-karpathy-skills

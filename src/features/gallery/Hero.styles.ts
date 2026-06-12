@@ -2,12 +2,13 @@
 import tw from "tailwind-styled-components";
 
 export const Section = tw.section`
-  max-w-7xl mx-auto px-margin-desktop pt-stack-lg pb-stack-md
+  max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop pt-stack-lg pb-stack-md
   text-center flex flex-col items-center justify-center min-h-[25vh]
 `;
 
 export const Title = tw.h1`
-  font-display-lg text-display-lg font-extrabold text-on-surface mb-stack-sm  text-display-lg
+  font-display-lg text-[2.6rem] leading-none md:text-display-lg
+  font-extrabold text-on-surface mb-stack-sm
 `;
 
 export const Subtitle = tw.p`

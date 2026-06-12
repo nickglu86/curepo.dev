@@ -5,7 +5,7 @@ import StyledComponentsRegistry from "@/lib/registry";
 import TopNav from "@/components/layout/TopNav";
 import Footer from "@/components/layout/Footer";
 import Analytics from "@/components/Analytics";
-import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
+import VercelAnalytics from "@/components/VercelAnalytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,40 +27,43 @@ export const metadata: Metadata = {
   // TODO: update to your real production domain once the custom domain is live.
   metadataBase: new URL("https://curepo.dev"),
   title: {
-    default: "curepo.dev — Curated GitHub Repositories Worth Your Stars",
+    default: "curepo — Best Curated GitHub Repos for AI Developers (2026)",
     template: "%s · curepo.dev",
   },
   description:
-    "Discover hand-picked, interesting GitHub repositories. Search and filter curated open-source projects by topic, language, and activity — a better way to find your next favorite repo.",
+    "A hand-picked gallery of the best GitHub repositories for AI developers in 2026 — LLM tools, agent frameworks, AI libraries, and modern dev tooling. Search and filter curated open-source projects by topic, language, and activity.",
   keywords: [
-    "github repositories",
-    "open source projects",
+    "ai developer tools",
+    "ai github repos",
+    "best ai repos 2026",
+    "llm open source",
+    "agent frameworks",
+    "ai libraries",
     "curated repos",
     "developer tools",
-    "discover github",
-    "best github repos",
   ],
+  verification: { google: "mLyM0M-Vc7IHbCYNIt-soBhTweXNU-gA1ezclKL9gog" },
   openGraph: {
     type: "website",
     siteName: "curepo",
     url: "https://curepo.dev",
-    title: "curepo — Curated GitHub Repositories Worth Your Stars",
+    title: "curepo — Best Curated GitHub Repos for AI Developers (2026)",
     description:
-      "Hand-picked, interesting GitHub repositories. Search and filter curated open-source projects by topic, language, and activity.",
+      "Hand-picked GitHub repositories for AI developers — LLM tools, agent frameworks, AI libraries, and dev tooling. Search and filter by topic, language, and activity.",
     images: [
       {
         url: "/assets/repo.png",
         width: 128,
         height: 128,
-        alt: "curepo.dev — Curated GitHub Repositories",
+        alt: "curepo — Curated GitHub repos for AI developers",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "curepo — Curated GitHub Repositories",
+    title: "curepo — Best Curated GitHub Repos for AI Developers (2026)",
     description:
-      "Hand-picked, interesting GitHub repositories — a better way to discover open source.",
+      "Hand-picked GitHub repositories for AI developers — a better way to discover the open source worth your stars.",
     images: ["/assets/repo.png"],
   },
 };

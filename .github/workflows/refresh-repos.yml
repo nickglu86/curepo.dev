@@ -1,6 +1,6 @@
 name: Refresh repos.json
 
-# Runs daily at 06:00 UTC to refresh stars / lastActivity / etc.
+# Runs weekly (Mondays) at 06:00 UTC to refresh stars / lastActivity / etc.
 # in src/data/repos.json for the non-featured cards.
 # (Featured cards already refresh live every page request via GraphQL.)
 #
