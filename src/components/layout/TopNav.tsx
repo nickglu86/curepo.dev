@@ -21,7 +21,7 @@ export default function TopNav() {
           </BrandIcon>
           curepo.dev
         </Brand>
-        <Nav>
+        {/* <Nav>
           <NavLink href="/" $active={pathname === "/"}>
             Browse
           </NavLink>
@@ -31,7 +31,7 @@ export default function TopNav() {
           <NavLink href="/terms" $active={pathname === "/terms"}>
             Terms
           </NavLink>
-        </Nav>
+        </Nav> */}
       </Inner>
     </Header>
   );

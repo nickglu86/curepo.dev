@@ -38,7 +38,7 @@ export function getFreshness(pushedAt: string): Freshness {
 export function activityLabel(pushedAt: string): string {
   const days = (Date.now() - new Date(pushedAt).getTime()) / DAY;
   if (days <= 30) return "Updated recently";
-  if (days <= 180) return "Updated in the last 6 months";
+  if (days <= 180) return "Updated few months ago";
   if (days <= 365) return "Updated this year";
   return "Updated over a year ago";
 }
